@@ -28,7 +28,6 @@ jobs:
           key: ivy2-files
       - name: Checkout
         uses: actions/checkout@v2
+      - uses: olafurpg/setup-scala@v11
       - name: SBT tests and artifacts
-        uses: lokkju/github-action-sbt@master
-        with:
-          commands: test
+        run: sbt test
